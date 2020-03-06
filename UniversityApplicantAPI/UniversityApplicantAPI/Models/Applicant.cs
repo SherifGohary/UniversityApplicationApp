@@ -21,8 +21,9 @@ namespace UniversityApplicantAPI.Models
         public eGenderType Gender { get; set; }
         public string PhoneNo { get; set; }
         public eMaritalStatus MaritalStatus { get; set; }
-
-        public virtual List<ApplicantEducation> ApplicantEducations { get; }
+        public string SchoolName { get; set; }
+        public int GraduationYear { get; set; }
+        public eGrade? Grade { get; set; }
 
     }
 }

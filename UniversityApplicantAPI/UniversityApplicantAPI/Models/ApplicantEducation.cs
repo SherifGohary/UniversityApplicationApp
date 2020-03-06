@@ -13,9 +13,7 @@ namespace UniversityApplicantAPI.Models
         [Key]
         public Guid Id { get; set; }
         public Guid ApplicantId { get; set; }
-        public string SchoolName { get; set; }
-        public int GraduationYear { get; set; }
-        public eGrade? Grade { get; set; }
+
 
         [ForeignKey(nameof(ApplicantId))]
         public virtual Applicant Applicant { get; }
