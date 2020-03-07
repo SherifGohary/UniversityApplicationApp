@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApplicantService } from './applicant.service';
 import { Subscription } from 'rxjs';
+import { Applicant } from './applicant';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,15 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  constructor(private applicantService: ApplicantService) { }
+  constructor() { }
 
   title = 'workspace';
-  applicantSub: Subscription;
+
 
   ngOnInit(): void {
-    this.applicantSub = this.applicantService.GetAllApplicants().subscribe(response => {
-      console.log(response);
-    });
+
   }
 
   ngOnDestroy(): void {
-    this.applicantSub.unsubscribe();
   }
 }

@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
 import { AppComponent } from './app.component';
+import { ApplicantRegistrationComponent } from './applicant-registration/applicant-registration.component';
+import { ApplicantsListComponent } from './applicants-list/applicants-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ApplicantRegistrationComponent,
+    ApplicantsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
