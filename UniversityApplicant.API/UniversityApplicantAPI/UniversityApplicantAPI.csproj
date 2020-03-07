@@ -145,6 +145,10 @@
     <Compile Include="Migrations\202003060016510_dropApplicantEducationTable.Designer.cs">
       <DependentUpon>202003060016510_dropApplicantEducationTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003072354582_AddingEmailField.cs" />
+    <Compile Include="Migrations\202003072354582_AddingEmailField.Designer.cs">
+      <DependentUpon>202003072354582_AddingEmailField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\ApplicantDB.cs" />
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003060016510_dropApplicantEducationTable.resx">
       <DependentUpon>202003060016510_dropApplicantEducationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003072354582_AddingEmailField.resx">
+      <DependentUpon>202003072354582_AddingEmailField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,6 +13,7 @@ namespace UniversityApplicantAPI.Models
         public Guid Id { get; set; }
         public string Fname { get; set; }
         public string Lname { get; set; }
+        public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public int? Age { get; set; }
         public string Country { get; set; }

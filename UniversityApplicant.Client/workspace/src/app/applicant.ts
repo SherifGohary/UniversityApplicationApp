@@ -2,6 +2,7 @@ export class Applicant {
     public Id: string;
     public Fname: string;
     public Lname: string;
+    public Email: string;
     public BirthDate: Date;
     public Age: number;
     public Country: string;

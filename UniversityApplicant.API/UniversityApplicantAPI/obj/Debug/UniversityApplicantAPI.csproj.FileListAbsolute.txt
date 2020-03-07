@@ -267,3 +267,4 @@ E:\GitHub\UniversityApplicationApp\UniversityApplicant.API\UniversityApplicantAP
 E:\GitHub\UniversityApplicationApp\UniversityApplicant.API\UniversityApplicantAPI\bin\System.Web.Http.Cors.dll
 E:\GitHub\UniversityApplicationApp\UniversityApplicant.API\UniversityApplicantAPI\bin\System.Web.Http.Cors.xml
 E:\GitHub\UniversityApplicationApp\UniversityApplicant.API\UniversityApplicantAPI\obj\Debug\UniversityApplicantAPI.csprojResolveAssemblyReference.cache
+E:\GitHub\UniversityApplicationApp\UniversityApplicant.API\UniversityApplicantAPI\obj\Debug\UniversityApplicantAPI.Migrations.AddingEmailField.resources
