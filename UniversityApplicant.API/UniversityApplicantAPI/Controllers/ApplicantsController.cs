@@ -75,7 +75,7 @@ namespace UniversityApplicantAPI.Controllers
 
         // POST: api/Applicants
         [ResponseType(typeof(Applicant))]
-        public async Task<IHttpActionResult> PostApplicant(Applicant applicant)
+        public async Task<IHttpActionResult> AddApplicant(Applicant applicant)
         {
             if (!ModelState.IsValid)
             {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Applicant } from '../applicant';
+import { ApplicantService } from '../applicant.service';
 
 @Component({
   selector: 'applicant-registration',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicantRegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private applicantService: ApplicantService) { }
+
+  public applicantToCreate: Applicant;
 
   ngOnInit(): void {
+    this.applicantToCreate = new Applicant();
+  }
+
+  onSubmit(form) {
+    console.log(form);
+    this.applicantService.AddApplicant(this.applicantToCreate).subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

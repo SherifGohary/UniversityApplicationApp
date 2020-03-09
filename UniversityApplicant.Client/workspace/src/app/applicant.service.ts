@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Applicant } from './applicant';
 
@@ -14,5 +14,10 @@ export class ApplicantService {
 
   public GetAllApplicants(): Observable<Applicant[]> {
     return this.httpClient.get<Applicant[]>(this.baseUrl);
+  }
+
+  public AddApplicant(applicant: Applicant): Observable<HttpEvent<Applicant>> {
+    const request = new HttpRequest('POST', this.baseUrl, applicant);
+    return this.httpClient.request(request);
   }
 }

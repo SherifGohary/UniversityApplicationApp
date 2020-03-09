@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { TableModule } from 'primeng/table';
@@ -20,7 +21,8 @@ import { ApplicantsListComponent } from './applicants-list/applicants-list.compo
     AppRoutingModule,
     HttpClientModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

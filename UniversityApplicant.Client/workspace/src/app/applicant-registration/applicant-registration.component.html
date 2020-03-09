@@ -1,58 +1,130 @@
-<h2 class="title">Registration Info</h2>
-<form method="POST">
+<form method="POST" #applicantForm="ngForm" (ngSubmit)="onSubmit(applicantForm)" ngNativeValidate>
+    <h2 class="title">Applicant Personal Info.</h2>
     <div class="row row-space">
-        <div class="col-2">
+        <div class="col-6">
             <div class="input-group">
-                <input class="input--style-1" type="text" placeholder="FIRST NAME" name="Fname">
+                <input class="input--style-1" type="text" placeholder="FIRST NAME" name="Fname"
+                    [(ngModel)]="applicantToCreate.Fname" #Fname="ngModel" required>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-6">
             <div class="input-group">
-                <input class="input--style-1" type="text" placeholder="LAST NAME" name="Lname">
+                <input class="input--style-1" type="text" placeholder="LAST NAME" name="Lname"
+                    [(ngModel)]="applicantToCreate.Lname" #Lname="ngModel" required>
             </div>
         </div>
     </div>
 
     <div class="row row-space">
-        <div class="col-2">
+        <div class="col-12">
             <div class="input-group">
-                <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday">
-                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                <input class="input--style-1" type="email" placeholder="EMAIL" name="Email"
+                    [(ngModel)]="applicantToCreate.Email" #Email="ngModel" required>
             </div>
         </div>
-        <div class="col-2">
+    </div>
+
+    <div class="row row-space">
+        <div class="col-6">
             <div class="input-group">
-                <div class="rs-select2 js-select-simple select--no-search">
-                    <select name="gender">
-                        <option disabled="disabled" selected="selected">GENDER</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
+                <input class="form-control p-0" style="border: none;" type="text" onfocus="(this.type='date')"
+                    onblur="(this.type='text')" placeholder="BIRTHDATE" name="BirthDate"
+                    [(ngModel)]="applicantToCreate.BirthDate" #BirthDate="ngModel" required>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="input-group">
+                <label><b>Gender:</b></label>
+                <div class="rs-select2 js-select-simple select--no-search" style="width:100%">
+                    <select class="form-control p-0" style="border: none; outline:none; box-shadow:none;" name="Gender"
+                        [(ngModel)]="applicantToCreate.Gender" #Gender="ngModel" required placeholder="d.ff">
+                        <option hidden value="" disabled selected>GENDER</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
                     </select>
-                    <div class="select-dropdown"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="input-group">
-        <div class="rs-select2 js-select-simple select--no-search">
-            <select name="class">
-                <option disabled="disabled" selected="selected">CLASS</option>
-                <option>Class 1</option>
-                <option>Class 2</option>
-                <option>Class 3</option>
-            </select>
-            <div class="select-dropdown"></div>
+    <div class="row row-space">
+        <div class="col-6">
+            <div class="input-group">
+                <input class="input--style-1" type="text" placeholder="COUNTRY" name="Country"
+                    [(ngModel)]="applicantToCreate.Country" #Country="ngModel" required>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="input-group">
+                <input class="input--style-1" type="text" placeholder="CITY" name="City"
+                    [(ngModel)]="applicantToCreate.City" #City="ngModel" required>
+            </div>
         </div>
     </div>
     <div class="row row-space">
-        <div class="col-2">
+        <div class="col-8">
             <div class="input-group">
-                <input class="input--style-1" type="text" placeholder="REGISTRATION CODE" name="res_code">
+                <input class="input--style-1" type="text" placeholder="ADDRESS" name="Address"
+                    [(ngModel)]="applicantToCreate.Address" #Address="ngModel" required>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="input-group">
+                <input class="input--style-1" type="tel" placeholder="PHONE NO." name="PhoneNo"
+                    [(ngModel)]="applicantToCreate.PhoneNo" #PhoneNo="ngModel" required>
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-5">
+            <div class="input-group">
+                <div class="rs-select2 js-select-simple select--no-search" style="width:100%">
+                    <select class="form-control p-0" style="border: none; outline:none; box-shadow:none; padding: 0px;"
+                        name="MaritalStatus" [(ngModel)]="applicantToCreate.MaritalStatus" #MaritalStatus="ngModel"
+                        required>
+                        <option disabled="disabled" selected="selected">MARITAL STATUS</option>
+                        <option value="1">Single</option>
+                        <option value="2">Married</option>
+                        <option value="3">Divorced</option>
+                        <option value="4">Widowed</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="border: dashed 1px #ccc; margin:20px 0px; height:0px;" />
+    <h2 class="title">Applicant Educational Info.</h2>
+    <div class="row row-space">
+        <div class="col-12">
+            <div class="input-group">
+                <input class="input--style-1" type="text" placeholder="SCHOOL NAME" name="SchoolName"
+                    [(ngModel)]="applicantToCreate.SchoolName" #SchoolName="ngModel" required>
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-6">
+            <div class="input-group">
+                <input class="input--style-1 js-datepicker" type="text" placeholder="GRADUATION YEAR"
+                    name="GraduationYear" [(ngModel)]="applicantToCreate.GraduationYear" #GraduationYear="ngModel"
+                    required>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="input-group">
+                <div class="rs-select2 js-select-simple select--no-search" style="width:100%">
+                    <select class="form-control p-0" style="border: none; outline:none; box-shadow:none;" name="Grade"
+                        [(ngModel)]="applicantToCreate.Grade" #Grade="ngModel" required>
+                        <option disabled="disabled" selected="selected">GRADE</option>
+                        <option value="0">Fair</option>
+                        <option value="1">Good</option>
+                        <option value="2">Very Good</option>
+                        <option value="3">Excellent</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
     <div class="p-t-20">
-        <button class="btn btn--radius btn--green" type="submit">Submit</button>
+        <button [disabled]="!applicantForm.form.valid" class="btn btn--radius btn--green" type="submit">Submit</button>
     </div>
 </form>
