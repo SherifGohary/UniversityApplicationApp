@@ -34,23 +34,19 @@ namespace UniversityApplicantAPI.Controllers
             {
                 return NotFound();
             }
-
+            applicant.Age = DateTime.Now.Year - applicant.BirthDate.Year;
             return Ok(applicant);
         }
 
-        // PUT: api/Applicants/5
+        [HttpPost]
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutApplicant(Guid id, Applicant applicant)
+        public async Task<IHttpActionResult> EditApplicant(Applicant applicant)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != applicant.Id)
-            {
-                return BadRequest();
-            }
 
             db.Entry(applicant).State = EntityState.Modified;
 
@@ -60,7 +56,7 @@ namespace UniversityApplicantAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ApplicantExists(id))
+                if (!ApplicantExists(applicant.Id))
                 {
                     return NotFound();
                 }
@@ -74,7 +70,7 @@ namespace UniversityApplicantAPI.Controllers
         }
 
         // POST: api/Applicants
-        [HttpPost]
+        [HttpPut]
         [ResponseType(typeof(Applicant))]
         public async Task<IHttpActionResult> AddApplicant([FromBody] Applicant applicant)
         {

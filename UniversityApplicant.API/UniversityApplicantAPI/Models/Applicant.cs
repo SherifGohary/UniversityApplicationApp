@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using UniversityApplicantAPI.Enums;
@@ -15,6 +16,7 @@ namespace UniversityApplicantAPI.Models
         public string Lname { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
+        [NotMapped]
         public int? Age { get; set; }
         public string Country { get; set; }
         public string City { get; set; }

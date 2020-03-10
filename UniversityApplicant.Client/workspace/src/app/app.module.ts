@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { TableModule } from 'primeng/table';
@@ -9,12 +10,14 @@ import { DropdownModule } from 'primeng/dropdown';
 import { AppComponent } from './app.component';
 import { ApplicantRegistrationComponent } from './applicant-registration/applicant-registration.component';
 import { ApplicantsListComponent } from './applicants-list/applicants-list.component';
+import { ApplicantDetailsComponent } from './applicant-details/applicant-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApplicantRegistrationComponent,
-    ApplicantsListComponent
+    ApplicantsListComponent,
+    ApplicantDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { ApplicantsListComponent } from './applicants-list/applicants-list.compo
     HttpClientModule,
     TableModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

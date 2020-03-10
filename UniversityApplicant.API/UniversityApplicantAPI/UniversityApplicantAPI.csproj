@@ -153,6 +153,10 @@
     <Compile Include="Migrations\202003100003385_AddingApplicatntResumeProp.Designer.cs">
       <DependentUpon>202003100003385_AddingApplicatntResumeProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003102106357_RemoveAgeField.cs" />
+    <Compile Include="Migrations\202003102106357_RemoveAgeField.Designer.cs">
+      <DependentUpon>202003102106357_RemoveAgeField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\ApplicantDB.cs" />
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003100003385_AddingApplicatntResumeProp.resx">
       <DependentUpon>202003100003385_AddingApplicatntResumeProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003102106357_RemoveAgeField.resx">
+      <DependentUpon>202003102106357_RemoveAgeField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

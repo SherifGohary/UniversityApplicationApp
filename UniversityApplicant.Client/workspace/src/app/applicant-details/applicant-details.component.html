@@ -1,0 +1,10 @@
+ <h1 *ngIf="applicant">{{applicant.Fname+" "+applicant.Lname}}</h1>
+  
+  <pdf-viewer 
+              *ngIf="applicant"
+              [src]="applicant.ApplicantResume" 
+              [render-text]="true"
+              style="display: block;"
+              [original-size]="false"
+              [autoresize]="true"
+  ></pdf-viewer>

@@ -1,25 +1,22 @@
                 <h2 class="title">All Applicants</h2>
+                <a class="btn btn-primary mb-2" routerLink="/register" routerLinkActive="active">Add New Applicant</a>
                 <p-table *ngIf="allApplicants" [value]="allApplicants">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Name</th>
-                            <th>Date of Birth</th>
                             <th>Country</th>
                             <th>City</th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-applicant>
                         <tr>
-                            <td>{{applicant.Fname}} {{applicant.Lname}}</td>
-                            <td>{{applicant.BirthDate}}</td>
+                            <td><a [routerLink]="['/applicant',applicant.Id]" routerLinkActive="active">{{applicant.Fname}} {{applicant.Lname}}</a></td>
                             <td>{{applicant.Country}}</td>
                             <td>{{applicant.City}}</td>
-                            <td><a #downloadLink 
-                            *ngIf="applicant.ApplicantResume"
-                            href="#"
-                            (click)="downloadLink.href=applicant.ApplicantResume; downloadLink.download=applicant.Fname;"
-                            >DownLoad resume</a></td>
+                            <td>
+                            <a class="btn btn-warning m-1" [routerLink]="['/applicant/edit',applicant.Id]" routerLinkActive="active">Edit</a>
+                            <a class="btn btn-danger m-1" (click)="deleteApplicant(applicant.Id)" >Delete</a>
+                            </td>
                         </tr>
                     </ng-template>
                 </p-table>
-                <a routerLink="/register" routerLinkActive="active">Register</a>
