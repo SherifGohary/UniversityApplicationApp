@@ -18,9 +18,13 @@ export class ApplicantsListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.applicantSub = this.applicantService.GetAllApplicants().subscribe(response => {
       this.allApplicants = response;
+      console.log(response);
     });
   }
 
+  log() {
+    console.log("log");
+  }
 
   ngOnDestroy(): void {
     this.applicantSub.unsubscribe();

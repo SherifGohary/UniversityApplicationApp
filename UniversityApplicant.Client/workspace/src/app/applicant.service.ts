@@ -17,7 +17,23 @@ export class ApplicantService {
   }
 
   public AddApplicant(applicant: Applicant): Observable<HttpEvent<Applicant>> {
-    const request = new HttpRequest('POST', this.baseUrl, applicant);
+    const formData: FormData = new FormData();
+    formData.append('Fname', applicant.Fname);
+    formData.append('Lname', applicant.Lname);
+    formData.append('Email', applicant.Email);
+    formData.append('BirthDate', JSON.stringify(applicant.BirthDate));
+    formData.append('Country', applicant.Country);
+    formData.append('City', applicant.City);
+    formData.append('Address', applicant.Address);
+    formData.append('Gender', JSON.stringify(applicant.Gender));
+    formData.append('PhoneNo', applicant.PhoneNo);
+    formData.append('MaritalStatus', JSON.stringify(applicant.MaritalStatus));
+    formData.append('SchoolName', applicant.SchoolName);
+    formData.append('GraduationYear', JSON.stringify(applicant.GraduationYear));
+    formData.append('Grade', JSON.stringify(applicant.Grade));
+    // formData.append('ApplicantResume', applicant.ApplicantResume);
+
+    const request = new HttpRequest('POST', this.baseUrl + "/AddApplicant", applicant);
     return this.httpClient.request(request);
   }
 }

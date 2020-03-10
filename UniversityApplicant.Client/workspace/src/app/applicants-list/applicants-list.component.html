@@ -14,7 +14,11 @@
                             <td>{{applicant.BirthDate}}</td>
                             <td>{{applicant.Country}}</td>
                             <td>{{applicant.City}}</td>
-                            <td></td>
+                            <td><a #downloadLink 
+                            *ngIf="applicant.ApplicantResume"
+                            href="#"
+                            (click)="downloadLink.href=applicant.ApplicantResume; downloadLink.download=applicant.Fname;"
+                            >DownLoad resume</a></td>
                         </tr>
                     </ng-template>
                 </p-table>

@@ -149,6 +149,10 @@
     <Compile Include="Migrations\202003072354582_AddingEmailField.Designer.cs">
       <DependentUpon>202003072354582_AddingEmailField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003100003385_AddingApplicatntResumeProp.cs" />
+    <Compile Include="Migrations\202003100003385_AddingApplicatntResumeProp.Designer.cs">
+      <DependentUpon>202003100003385_AddingApplicatntResumeProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\ApplicantDB.cs" />
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003072354582_AddingEmailField.resx">
       <DependentUpon>202003072354582_AddingEmailField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003100003385_AddingApplicatntResumeProp.resx">
+      <DependentUpon>202003100003385_AddingApplicatntResumeProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -124,6 +124,16 @@
             </div>
         </div>
     </div>
+    <hr style="border: dashed 1px #ccc; margin:20px 0px; height:0px;" />
+    <h2 class="title">Applicant Resume.</h2>
+    <div class="row row-space">
+        <div class="col-12">
+            <div class="input-group">
+                <input class="input--style-1" type="file" (change)="fileChange($event)" placeholder="Upload file"
+                    accept=".pdf,.doc,.docx">
+            </div>
+        </div>
+    </div>
     <div class="p-t-20">
         <button [disabled]="!applicantForm.form.valid" class="btn btn--radius btn--green" type="submit">Submit</button>
     </div>

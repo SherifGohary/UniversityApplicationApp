@@ -25,6 +25,6 @@ namespace UniversityApplicantAPI.Models
         public string SchoolName { get; set; }
         public int GraduationYear { get; set; }
         public eGrade? Grade { get; set; }
-
+        public string ApplicantResume { get; set; }
     }
 }

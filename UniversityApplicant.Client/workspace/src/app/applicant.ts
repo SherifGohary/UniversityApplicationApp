@@ -14,6 +14,7 @@ export class Applicant {
     public SchoolName: string;
     public GraduationYear: number;
     public Grade: eGrade;
+    public ApplicantResume: string;
 }
 
 export enum eGenderType {

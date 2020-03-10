@@ -74,14 +74,15 @@ namespace UniversityApplicantAPI.Controllers
         }
 
         // POST: api/Applicants
+        [HttpPost]
         [ResponseType(typeof(Applicant))]
-        public async Task<IHttpActionResult> AddApplicant(Applicant applicant)
+        public async Task<IHttpActionResult> AddApplicant([FromBody] Applicant applicant)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+            applicant.Id = Guid.NewGuid();
             db.Applicants.Add(applicant);
 
             try
